@@ -25,3 +25,4 @@ urlpatterns = [
     # path('cvbuilder/', include('cvbuilder.urls')),
     # path('payments/', include('payments.urls')),
 ]
+

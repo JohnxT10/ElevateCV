@@ -1,0 +1,11 @@
+Hi {{ user.username }},
+
+Thank you for registering with ElevateCV!
+
+Please confirm your email address by clicking the link below:
+{{ activate_url }}
+
+If you did not sign up, please ignore this email.
+
+Best regards,
+The ElevateCV Team
