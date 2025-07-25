@@ -1,0 +1,11 @@
+<h2>Your CVs</h2>
+<a href="{% url 'cv_create' %}">Create New CV</a>
+<ul>
+  {% for cv in cvs %}
+    <li>
+      {{ cv.title }}
+      <a href="{% url 'cv_edit' cv.pk %}">Edit</a>
+      <a href="{% url 'cv_delete' cv.pk %}">Delete</a>
+    </li>
+  {% endfor %}
+</ul>
