@@ -3,7 +3,7 @@
 <ul>
   {% for cv in cvs %}
     <li>
-      <strong>{{ cv.title }}</strong> — {{ cv.first_name }} {{ cv.surname }}<br>
+      <strong>{{ cv.title }}</strong>  {{ cv.first_name }} {{ cv.surname }}<br>
       <a href="{% url 'cv_edit' cv.pk %}">Edit</a>
       <a href="{% url 'cv_delete' cv.pk %}">Delete</a>
     </li>

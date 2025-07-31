@@ -1,0 +1,7 @@
+<h2>Delete CV</h2>
+<p>Are you sure you want to delete the CV "<strong>{{ cv.title }}</strong>" for {{ cv.first_name }} {{ cv.surname }}?</p>
+<form method="post">
+  {% csrf_token %}
+  <button type="submit">Yes, delete</button>
+  <a href="{% url 'cv_list' %}">Cancel</a>
+</form>

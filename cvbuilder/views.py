@@ -11,6 +11,7 @@ def cv_list(request):
 @login_required
 def cv_create(request):
     if request.method == 'POST':
+        # link the form (from forms.py) to the user
         form = CVForm(request.POST)
         if form.is_valid():
             cv = form.save(commit=False)

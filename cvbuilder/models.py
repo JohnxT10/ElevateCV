@@ -3,15 +3,25 @@ from django.contrib.auth.models import User
 
 # Main CV model, stores user and contact details
 class CV(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)  
-    title = models.CharField(max_length=255)                  
-    first_name = models.CharField(max_length=255)            
-    surname = models.CharField(max_length=255)             
-    email = models.EmailField()                              
-    phone = models.CharField(max_length=50, blank=True)       
-    address = models.CharField(max_length=255, blank=True)    
-    summary = models.TextField(blank=True)                    
-    created_at = models.DateTimeField(auto_now_add=True)    
+    TITLE_CHOICES = [
+        ('Mr', 'Mr'),
+        ('Ms', 'Ms'),
+        ('Miss', 'Miss'),
+        ('Mrs', 'Mrs'),
+        ('Dr', 'Dr'),
+        ('Prof', 'Prof'),
+        ('Sir', 'Sir'),
+        ('Mx', 'Mx'),
+    ]
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    title = models.CharField(max_length=10, choices=TITLE_CHOICES)  # Dropdown for title
+    first_name = models.CharField(max_length=255)
+    surname = models.CharField(max_length=255)
+    email = models.EmailField()
+    phone = models.CharField(max_length=50, blank=True)
+    address = models.CharField(max_length=255, blank=True)
+    summary = models.TextField(blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)  
 
 # Education section for a CV
 class Education(models.Model):

@@ -4,7 +4,7 @@ from .models import CV, Education, WorkHistory, Qualification, Skill, Project
 class CVForm(forms.ModelForm):
     class Meta:
         model = CV
-        fields = ['title', 'first_name', 'Surname' 'email', 'phone', 'address', 'summary']
+        fields = ['title', 'first_name', 'surname', 'email', 'phone', 'address', 'summary']
 
 class EducationForm(forms.ModelForm):
     class Meta:
