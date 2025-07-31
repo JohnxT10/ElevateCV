@@ -1,19 +1,24 @@
 from django import forms
-from .models import CV, Education, Experience, Skill, Project
+from .models import CV, Education, WorkHistory, Qualification, Skill, Project
 
 class CVForm(forms.ModelForm):
     class Meta:
         model = CV
-        fields = ['title']
+        fields = ['title', 'first_name', 'Surname' 'email', 'phone', 'address', 'summary']
 
 class EducationForm(forms.ModelForm):
     class Meta:
         model = Education
         fields = ['school', 'degree', 'start_year', 'end_year']
 
-class ExperienceForm(forms.ModelForm):
+class QualificationForm(forms.ModelForm):
     class Meta:
-        model = Experience
+        model = Qualification
+        fields = ['name', 'institution', 'year']
+
+class WorkHistoryForm(forms.ModelForm):
+    class Meta:
+        model = WorkHistory
         fields = ['company', 'position', 'start_year', 'end_year', 'description']
 
 class SkillForm(forms.ModelForm):

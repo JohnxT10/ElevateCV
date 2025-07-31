@@ -1,0 +1,9 @@
+<h2>Build Your CV</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Download as PDF</button>
+</form>
+<p>
+  Want to save your CV for later? <a href="{% url 'account_signup' %}">Sign up</a> or <a href="{% url 'account_login' %}">log in</a>!
+</p>

@@ -37,3 +37,20 @@ def cv_delete(request, pk):
         cv.delete()
         return redirect('cv_list')
     return render(request, 'cvbuilder/cv_confirm_delete.html', {'cv': cv})
+
+
+def public_cv_builder(request):
+    if request.method == 'POST':
+        form = CVForm(request.POST)
+        if form.is_valid():
+            if request.user.is_authenticated:
+                cv = form.save(commit=False)
+                cv.user = request.user
+                cv.save()
+                return redirect('cv_list')
+            else:
+                # For now, just show a preview; later, add PDF generation
+                return render(request, 'cvbuilder/cv_pdf_preview.html', {'form': form, 'data': form.cleaned_data})
+    else:
+        form = CVForm()
+    return render(request, 'cvbuilder/public_cv_form.html', {'form': form})

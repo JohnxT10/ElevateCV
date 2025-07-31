@@ -1,0 +1,14 @@
+<h2>Your CV Preview</h2>
+<ul>
+  <li><strong>Name:</strong> {{ data.full_name }}</li>
+  <li><strong>Email:</strong> {{ data.email }}</li>
+  <li><strong>Phone:</strong> {{ data.phone }}</li>
+  <li><strong>Address:</strong> {{ data.address }}</li>
+  <li><strong>Summary:</strong> {{ data.summary }}</li>
+  <!-- Add more fields as needed -->
+</ul>
+<p>
+  <a href="{% url 'public_cv_builder' %}">Back to form</a>
+  <br>
+  <a href="{% url 'account_signup' %}">Sign up</a> or <a href="{% url 'account_login' %}">log in</a> to save your CV!
+</p>

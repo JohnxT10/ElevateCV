@@ -1,7 +1,7 @@
-<h2>Create or Edit CV</h2>
+<h2>Add or Edit Project</h2>
 <form method="post">
   {% csrf_token %}
   {{ form.as_p }}
   <button type="submit">Save</button>
 </form>
-<a href="{% url 'cv_list' %}">Back to CV List</a>
+<a href="{% url 'cv_edit' cv.pk %}">Back to CV</a>
